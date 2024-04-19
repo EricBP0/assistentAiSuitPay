@@ -1,5 +1,4 @@
 from openai import OpenAI
-import json
 
 client = OpenAI(api_key='')
 
@@ -8,7 +7,7 @@ thread = client.beta.threads.create()
 message = client.beta.threads.messages.create(
     thread_id=thread.id,
     role="user",
-    content="Quais são os parâmetros que tenho que passar para gerar um qrCode pela api da SuitPay?"
+    content="Quais são os parâmetros que tenho que passar para gerar um qrCode pela api da SuitPay?" # Exemplo de input para o ChatBot
 )
 run = client.beta.threads.runs.create_and_poll(
     thread_id=thread.id,
