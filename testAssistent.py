@@ -12,6 +12,7 @@ message = client.beta.threads.messages.create(
 run = client.beta.threads.runs.create_and_poll(
     thread_id=thread.id,
     assistant_id=assistant.id,
+    tools=[{"type": "file_search"}],
 )
 if run.status == 'completed':
     messages = client.beta.threads.messages.list(
