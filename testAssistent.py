@@ -18,6 +18,6 @@ if run.status == 'completed':
     messages = client.beta.threads.messages.list(
         thread_id=thread.id
     )
-    print(message)
+    print(messages)
 else:
     print(run.status)
